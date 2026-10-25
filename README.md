@@ -1,5 +1,7 @@
 # Task Bubble
 
+![Task Bubble icon](task_bubble_icon.png)
+
 Task Bubble is a small Windows desktop task widget. Keep a lavender retro task panel open above other windows, or minimize it to the Tamagotchi bubble in the bottom-right corner. Tasks are sorted by due date or priority and saved on your computer.
 
 ## Install on Windows
