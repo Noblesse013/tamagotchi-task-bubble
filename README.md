@@ -1,12 +1,25 @@
+
+
+<p align="center">
+   <img src="task_bubble_icon.png" alt="Task Bubble icon">
+</p>
+
 # Task Bubble
-
-![Task Bubble icon](task_bubble_icon.png)
-
 Task Bubble is a small Windows desktop task widget. Keep a lavender retro task panel open above other windows, or minimize it to the Tamagotchi bubble in the bottom-right corner. Tasks are sorted by due date or priority and saved on your computer.
 
 ## UI Demo
 
-![Task Bubble UI Layout](task_bubble_icon.png)
+Empty Today tab:
+
+![Task Bubble empty Today tab](assets/Screenshot%202026-10-25%20150157.png)
+
+Add task form:
+
+![Task Bubble add task form](assets/Screenshot%202026-10-25%20150222.png)
+
+Minimized bubble mode:
+
+![Task Bubble minimized bubble mode](assets/Screenshot%202026-10-25%20150440.png)
 
 ### App Layout
 - **Header**: Title, task count, collapse to bubble (`^`), and close (`X`) buttons
@@ -47,9 +60,7 @@ Tasks are stored locally at `%LOCALAPPDATA%\TaskBubble\tasks.json`. Uninstalling
 
 Task Bubble uses a lavender, old-school desktop look. The task panel pairs a pale lavender surround with warm cream surfaces, dark pixel-like outlines, Courier New labels, and soft pastel task cards. The floating state uses the Tamagotchi artwork by itself, with a small badge for unfinished tasks and no colored halo behind it.
 
-![Task Bubble task list](assets/task-bubble-ui.png)
-
-The screenshot shows the current task-list panel. The add-task form includes a clickable calendar date picker, priority selector, and pastel color choices. The current bubble artwork is `task_bubble_icon.png`.
+The add-task form includes a clickable calendar date picker, priority selector, and pastel color choices. The current bubble artwork is `task_bubble_icon.png`.
 
 ## Build a standalone Windows executable
 
