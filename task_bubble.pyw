@@ -206,7 +206,7 @@ class TaskBubble:
 
     def show_list_page(self) -> None:
         self.clear_page()
-        self.make_header("Your tasks", "Explore your to-do list · sorted by due date and priority")
+        self.make_header("Your tasks", "You are doing your best, and that is okay.")
         content = tk.Frame(self.page, bg=PANEL)
         content.pack(fill="both", expand=True)
         tabs = tk.Frame(content, bg=PANEL)
