@@ -4,6 +4,18 @@
 
 Task Bubble is a small Windows desktop task widget. Keep a lavender retro task panel open above other windows, or minimize it to the Tamagotchi bubble in the bottom-right corner. Tasks are sorted by due date or priority and saved on your computer.
 
+## UI Demo
+
+![Task Bubble UI Layout](task_bubble_icon.png)
+
+### App Layout
+- **Header**: Title, task count, collapse to bubble (`^`), and close (`X`) buttons
+- **Tabs**: `Today` / `Upcoming` / `All` / `Done` for filtering tasks
+- **Sort/View**: Dropdown to sort by due date or priority, toggle to show/hide completed tasks
+- **Task List**: Color-coded task cards with due date, priority badge, and checkbox to mark done
+- **Add Task**: `+ Add task` button opens the task editor
+- **Bubble Mode**: Click `^` to minimize to a small Tamagotchi-style bubble in the bottom-right corner
+
 ## Install on Windows
 
 ### From a release
