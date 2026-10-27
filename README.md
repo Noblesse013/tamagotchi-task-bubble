@@ -21,6 +21,10 @@ Minimized bubble mode:
 
 ![Task Bubble minimized bubble mode](assets/Screenshot%202026-10-25%20150440.png)
 
+New screenshot:
+
+![Task Bubble screenshot](assets/Screenshot%202026-10-27%20221309.png)
+
 ### App Layout
 - **Header**: Title, task count, collapse to bubble (`^`), and close (`X`) buttons
 - **Tabs**: `Today` / `Upcoming` / `All` / `Done` for filtering tasks
