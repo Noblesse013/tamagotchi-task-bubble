@@ -1,80 +1,88 @@
-
-
 <p align="center">
-   <img src="task_bubble_icon.png" alt="Task Bubble icon">
+  <img src="task_bubble_icon.png" alt="Task Bubble icon" width="128">
 </p>
 
 # Task Bubble
-Task Bubble is a small Windows desktop task widget. Keep a lavender retro task panel open above other windows, or minimize it to the Tamagotchi bubble in the bottom-right corner. Tasks are sorted by due date or priority and saved on your computer.
 
-## UI Demo
+A lightweight Windows desktop task widget with a retro lavender UI. Keep tasks in an always-on-top panel or minimize to a cute Tamagotchi-style bubble in the bottom-right corner. Tasks are sorted by due date or priority and saved locally.
 
-Empty Today tab:
+## Features
 
-![Task Bubble empty Today tab](assets/Screenshot%202026-10-25%20150157.png)
+- **Two modes** – Full panel or minimized bubble
+- **Smart filtering** – Tabs for `Today`, `Upcoming`, `All`, and `Done`
+- **Flexible sorting** – Sort by due date or priority
+- **Quick editing** – Click any due date to change or clear it directly from the list
+- **Custom tasks** – Set due dates, priorities, and pastel colors
+- **Local storage** – All tasks stay on your PC
+- **Auto-start** – Can launch on Windows sign-in
 
-Add task form:
+## Screenshots
 
-![Task Bubble add task form](assets/Screenshot%202026-10-25%20150222.png)
-
-Minimized bubble mode:
-
-![Task Bubble minimized bubble mode](assets/Screenshot%202026-10-25%20150440.png)
-
-New screenshot:
+| Empty Today Tab | Add Task Form | Minimized Bubble |
+| --- | --- | --- |
+| ![Task Bubble empty Today tab](assets/Screenshot%202026-10-25%20150157.png) | ![Task Bubble add task form](assets/Screenshot%202026-10-25%20150222.png) | ![Task Bubble minimized bubble mode](assets/Screenshot%202026-10-25%20150440.png) |
 
 ![Task Bubble screenshot](assets/Screenshot%202026-10-27%20221309.png)
 
-### App Layout
-- **Header**: Title, task count, collapse to bubble (`^`), and close (`X`) buttons
-- **Tabs**: `Today` / `Upcoming` / `All` / `Done` for filtering tasks
-- **Sort/View**: Dropdown to sort by due date or priority, toggle to show/hide completed tasks
-- **Task List**: Color-coded task cards with due date, priority badge, and checkbox to mark done
-- **Add Task**: `+ Add task` button opens the task editor
-- **Bubble Mode**: Click `^` to minimize to a small Tamagotchi-style bubble in the bottom-right corner
+## Installation
 
-## Install on Windows
-
-### From a release
-
-1. Download the latest `TaskBubble-...-windows-x64.zip` from the project's GitHub Releases page and extract it.
-2. Right-click `install.ps1` and choose **Run with PowerShell**. If Windows blocks the script, open PowerShell in the extracted folder and run:
+### Option 1: Download from Releases (Recommended)
+1. Go to the [GitHub Releases](https://github.com/Noblesse013/tamagotchi-task-bubble/releases) page and download the latest `TaskBubble-*-windows-x64.zip`.
+2. Extract the ZIP to a folder of your choice.
+3. Right-click `install.ps1` → **Run with PowerShell**.  
+   If Windows blocks execution, open PowerShell in that folder and run:
 
    ```powershell
    powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
    ```
 
-The installer needs no administrator access. It installs Task Bubble under `%LOCALAPPDATA%\Programs\TaskBubble`, adds a desktop shortcut, and starts the app when you sign in to Windows. Run `uninstall.ps1` from the extracted folder to remove the app and its shortcuts. Your saved tasks are kept.
+### Option 2: Clone with Git
+```powershell
+git clone https://github.com/Noblesse013/tamagotchi-task-bubble.git
+cd tamagotchi-task-bubble
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
+```
 
-### From source
+### Option 3: Run from Source
+1. Install [Python 3.10+](https://www.python.org/downloads/) for Windows.
+2. Clone or download this repository.
+3. Run the app:
 
-Install Python 3.10 or newer for Windows, download or clone this repository, then run `install.ps1` as above. The installer creates the same shortcuts and sign-in startup entry. To remove them and the installed app, run `uninstall.ps1`.
+   ```powershell
+   python task_bubble.pyw
+   ```
 
-## Use it
+**What the installer does:**
+- Installs to `%LOCALAPPDATA%\Programs\TaskBubble` (no admin rights required)
+- Creates a desktop shortcut
+- Adds to Windows Startup
+- Launches the app after installation
 
-- Select **＋ Add task** to add a task, choose an optional due date from the calendar, set its priority, and pick a card color. Use **Clear date** for tasks without a deadline.
-- Click a task card's underlined due-date line (including **No due date**) to change or clear its date directly from the list.
-- Use Today, Upcoming, All, and Done to filter tasks; sort by due date or priority.
-- Drag the top bar to move the panel. Minimize it to the bubble and click the bubble to reopen the panel.
-- Click **×** to quit. A short chime plays when minimizing.
+**Uninstall:** Run `uninstall.ps1` from the extracted folder. Your tasks remain saved at `%LOCALAPPDATA%\TaskBubble\tasks.json`.
 
-Tasks are stored locally at `%LOCALAPPDATA%\TaskBubble\tasks.json`. Uninstalling does not delete this file.
+## Usage
 
-## UI design
+- **Add a task:** Click `+ Add task`, pick a due date (or `Clear date`), set priority and color, then save.
+- **Edit due dates:** Click the underlined due date on any task card (including `No due date`) to change or clear it.
+- **Filter & sort:** Use `Today` / `Upcoming` / `All` / `Done` tabs and the sort dropdown.
+- **Move:** Drag the top bar to reposition the panel.
+- **Bubble mode:** Click `^` to minimize to the bubble. Click the bubble to reopen. A short chime plays when minimizing.
+- **Close:** Click `×` to quit.
 
-Task Bubble uses a lavender, old-school desktop look. The task panel pairs a pale lavender surround with warm cream surfaces, dark pixel-like outlines, Courier New labels, and soft pastel task cards. The floating state uses the Tamagotchi artwork by itself, with a small badge for unfinished tasks and no colored halo behind it.
+## Design & Data
 
-The add-task form includes a clickable calendar date picker, priority selector, and pastel color choices. The current bubble artwork is `task_bubble_icon.png`.
+- **Storage:** `%LOCALAPPDATA%\TaskBubble\tasks.json`
+- **Theme:** Lavender retro look with cream panels, pixel outlines, Courier New text, pastel task cards. Bubble shows the Tamagotchi icon with a badge for unfinished tasks.
 
-## Build a standalone Windows executable
-
-The project includes a GitHub Actions workflow that builds a single-file, windowed Windows executable when a version tag such as `v1.0.0` is pushed. It packages the icon and chime and attaches a ZIP with the installer scripts to the GitHub Release. To build locally, install Python 3.10+ and run:
+## Build a Standalone EXE
 
 ```powershell
 python -m pip install pyinstaller
 python -m PyInstaller --noconfirm --clean --onefile --windowed --name TaskBubble --icon task_bubble.ico --add-data "task_bubble_icon.png;." --add-data "task_bubble.ico;." --add-data "close.wav;." task_bubble.pyw
 ```
 
+Releases are built automatically via GitHub Actions when a version tag (e.g. `v1.0.0`) is pushed.
+
 ## License
 
-Task Bubble is open source under the MIT License. See [LICENSE](LICENSE).
+Task Bubble is open source under the [MIT License](LICENSE).
